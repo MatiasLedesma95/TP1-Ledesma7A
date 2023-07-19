@@ -15,19 +15,37 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Copia aqui el header del index.html -->
-<h1>hola</h1>
+    <header class="header"><!-- Crear un header, con la class "header" y dentro deben estar los 2 div que figuran aqui abajo -->
+        <div class="contenedor"> <!-- darle a este div la clase "contenedor" -->
+            <div class="barra"> <!-- darle a este div la clase "barra" -->
+                <a class="logo" href="index.html">
+                    <h1 class="logo__nombre no-margin centrar-texto">BarberShop</h1>
+                </a><!-- crear aqui una etiqueta "a" con la clase "logo" y su href debe ser al "index.html" -->
+                <!-- colocar dentro, una etiqueta h1 que diga BarberShop, darle las clases logo__nombre , no margin y centrar texto -->
 
-    <!-- crea aqui un main con la class contenedor -->
-        <h3 >Contacto</h3> <!-- dale la class centrar-texto a este h3, y colocalo adentro del main-->
+                <nav class="navegacion"> <!-- darle a este nav la clase "navegacion" -->
+                    <a class="navegacion_enlace" href="nosotros.html">nosotros</a>
+                    <a class="navegacion_enlace" href="cursos.html">cursos</a>
+                    <a class="navegacion_enlace" href="contacto.html">contacto</a><!-- crear 3 etiquetas "a". Dentro, cada una tendran su texto de "nosotros","cursos", "contacto". Cada una debe redireccionar a nosotros.html,cursos.html y contacto.html respectivamente Darle las clases navegacion_enlace -->
+                </nav>
+            </div>
+        </div>
+        <div class="header__texto"> <!-- darle a este div la clase "header__texto" -->
+            <h2 class="no-margin">Cuidar tu imagen es nuestro trabajo</h2><!-- crear un h2 que diga "Cuidar tu imagen es nuestro trabajo" y tenga la class no-margin -->
+            <p class="no-margin">Dejalo en manos de profesionales</p><!-- crear un p que diga "Dejalo en manos de profesionales" y tenga la class no-margin -->
+        </div>
+    </header><!-- Copia aqui el header del index.html -->
 
-        <!-- crea aqui un div con la class "contacto-gb", pero no le agregues nada dentro -->
+    <main class="contenedor"><!-- crea aqui un main con la class contenedor -->
+        <h3 class="centrar-texto" >Contacto</h3> <!-- dale la class centrar-texto a este h3, y colocalo adentro del main-->
+
+        <div class="contacto-gb"></div><!-- crea aqui un div con la class "contacto-gb", pero no le agregues nada dentro -->
 
         <!-- crea aqui un formulario: ponle la clase "formulario" 
         dentro, colocaras los div que estan a continuacion -->
         
             <div> <!-- dale a este div la clase "campo" -->
-                <!-- crea un label, con la clase "campo__label" y con el texto Nombre -->
+                <label for=""></label><!-- crea un label, con la clase "campo__label" y con el texto Nombre -->
                 <!-- crea un input del tipo text, con la clase "campo__field" y con el placeholder "Ingrese su nombre" -->
             </div>
             <div><!-- dale a este div la clase "campo" -->
@@ -42,7 +60,7 @@
                 <!-- crea un input del tipo submit, con la clase "boton boton--primario" y con el value Enviar -->
             </div>
          <!-- aqui deberia cerrar tu formulario-->
-    <!--Aqui deberia cerrar tu main-->
+    </main><!--Aqui deberia cerrar tu main-->
 
 <!-- Coloca Aqui el footer de index.html -->
     <script src="js/modernizr.js"></script>
