@@ -8,6 +8,7 @@
     --gris: dale un color gris (puedes usar este codigo #a7a5a5) 
     --negro: dale el color negro
     --primario: dale un color a tu gusto!!! */
+
     --blanco: white;
     --gris: #a7a5a5;
     --negro: black;
@@ -122,6 +123,7 @@ su altura sera de 60rem. Agrega luego este codigo:
 .navegacion{
     display: flex;
     gap: 2rem;
+
 }
 /* crea la clase navegacion: usa un display flex, con un gap de 2rem*/
 
@@ -131,7 +133,9 @@ su altura sera de 60rem. Agrega luego este codigo:
     font-size: 1.8rem;
     color: var(--blanco);
 }
-
+.navegacion__enlace:hover{
+    transform: scale(1.5);
+}
 /* crea la clase navegacion__enlace: usa un display block, alinea el texto al centro, y cambia el tamaño de la fuente a 1.8rem y al color de la letra en blanco*/
 
 .contenido-principal{
@@ -176,13 +180,13 @@ border: none;
 
 @keyframes escalar {
     from{transform: scale (1) }
-    to{transform; scale (1.5)}   
+    to{transform: scale (1.5)}   
 }
 
 .boton:hover {
     cursor: pointer;
 
-    animation: escalar 5s;
+    animation: escalar 1s;
 
     /* AÑADE UN EFECTO A TU GUSTO (USANDO UN @KEYFRAMES u otros)*/
 }
@@ -190,10 +194,18 @@ border: none;
 .boton--primario{
     background-color: var(--negro);
 }
-    
+.boton--primario:hover{
+    background-color: var(--secundario);
+    color: var(--negro);
+}
+        
 /*crea la clase boton--primario: dale un color de fondo usando tu color --negro*/
 .boton--secundario{
     background-color: var(--secundario);
+}
+.boton--secundario:hover{
+    background-color: var(--negro);
+    color: var(--secundario);
 }
 /*crea la clase boton--secundario: dale un color de fondo usando tu color --secundario*/
 
@@ -290,13 +302,14 @@ agrega que su ancho sea del 95% y que el padding sea de 5rem*/
     margin-bottom: 2rem;
 }
 .campo__label {
-    flex: 0 0 9rem;
+    flex: 0 0 1rem;
     text-align: right;
     padding-right: 2rem;
 }
 .campo__field {
     flex: 1;
     border: 1px solid var(--gris);
+    border-radius: 5px;
 }
 .campo__field--textarea {
     height: 20rem;
