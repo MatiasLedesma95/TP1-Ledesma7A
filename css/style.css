@@ -9,6 +9,11 @@
     --negro: dale el color negro
     --primario: dale un color a tu gusto!!! */
 
+    --blanco: white;
+    --gris: #a7a5a5;
+    --negro: black;
+    --primario: rgba(107, 28, 28, 0.674);
+    --secundario: rgb(154, 105, 105);
 }
 
 /*! DESDE AQUI, NO TOQUES NADA!!!*/
@@ -72,6 +77,13 @@ img {
 }
 
 /*!!!!---- Desde aqui hasta abajo, debes crear el codigo!!! !!!!!*/
+.header{
+    background-image: url(../img/banner-barberia.jpg);
+    height: 60rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
 
 /** Header **/
 /* crea la clase header: dale una imagen de fondo usando el banner-barberia.
@@ -79,13 +91,24 @@ su altura sera de 60rem. Agrega luego este codigo:
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;   */
-
+.header__texto{
+    text-align: center;
+    color: var(--blanco);
+    margin-top: 15rem;
+}
 /* crea la clase header__texto: alinea el texto al centro, dale el color a las letras usando la variable (--blanco), y con un margin-top de 15rem*/
 
-
+.barra{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 4rem;
+}
 /* crea la clase barra: agregale un display del tipo flex, alinea los items en el centro, y justifica el contenido con un space-between. agrega un padding-top de 4rem*/
 
-
+.logo{
+    color: var(--blanco);
+}
 /*crea la clase logo: dale el color blanco a las letras, usando la variable --blanco*/
 
 
@@ -96,13 +119,30 @@ su altura sera de 60rem. Agrega luego este codigo:
 .logo__bold {
     font-weight: 700;
 }
+
+.navegacion{
+    display: flex;
+    gap: 2rem;
+
+}
 /* crea la clase navegacion: usa un display flex, con un gap de 2rem*/
 
-
-
+.navegacion__enlace{
+    display: block;
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--blanco);
+}
+.navegacion__enlace:hover{
+    transform: scale(1.5);
+}
 /* crea la clase navegacion__enlace: usa un display block, alinea el texto al centro, y cambia el tamaño de la fuente a 1.8rem y al color de la letra en blanco*/
 
-
+.contenido-principal{
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    column-gap: 4rem;
+}
 /* crea la clase contenido-principal: el display grid, y usa el template-columns para pasar 2 parametros, uno de 1fr y otro de 0.5fr.
 dale un gap a las columnas de 4rem
 */
@@ -116,7 +156,18 @@ dale un gap a las columnas de 4rem
     border: none;
     margin-bottom: 0;
 }
-
+.boton{
+    display: inline-block;
+    font-family: var(--fuenteHeading);
+    color: var(--blanco);
+    text-align: center;
+    font-size: 1.8rem;
+    padding: 1rem 3rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    border: none;
+}
 /* crea la clase boton:
 dale un display del tipo inline-block, usa la fuente de --fuenteHeading, y dale el color --blanco
 alinea los textos al centro. cambia el tamaño de fuente a 1.8rem. Luego, agrega dentro, estas lineas:
@@ -127,15 +178,35 @@ margin-bottom: 2rem;
 border: none;
 */
 
+@keyframes escalar {
+    from{transform: scale (1) }
+    to{transform: scale (1.5)}   
+}
 
 .boton:hover {
     cursor: pointer;
+
+    animation: escalar 1s;
+
     /* AÑADE UN EFECTO A TU GUSTO (USANDO UN @KEYFRAMES u otros)*/
 }
 
-
+.boton--primario{
+    background-color: var(--negro);
+}
+.boton--primario:hover{
+    background-color: var(--secundario);
+    color: var(--negro);
+}
+        
 /*crea la clase boton--primario: dale un color de fondo usando tu color --negro*/
-
+.boton--secundario{
+    background-color: var(--secundario);
+}
+.boton--secundario:hover{
+    background-color: var(--negro);
+    color: var(--secundario);
+}
 /*crea la clase boton--secundario: dale un color de fondo usando tu color --secundario*/
 
 .cursos {
@@ -162,14 +233,31 @@ border: none;
     font-size: 2rem;
 }
 
-/*Crea la clase footer: dale un fondo usando la variable negro, un padding-bottom de 3rem y un margin superior de 4rem*/
+.footer{
+    background-color: var(--negro);
+    padding-bottom: 3rem;
+    margin-top: 4rem;
+}
+    /*Crea la clase footer: dale un fondo usando la variable negro, un padding-bottom de 3rem y un margin superior de 4rem*/
 
 
 /** Sobre Nosotros **/
+.sobre-nosotros{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 2rem;
+}
 /* crea la clase sobre-nosotros: dale un display del tipo grid, y usa el template columns con un repeat de (2,1fr), crea el column gap de 2rem*/
 
 
 /** Cursos **/
+.curso{
+    display: grid;
+    grid-template-columns: 1fr 2fr ;
+    gap: 2rem;
+    border-bottom: 1px solid var(--gris);
+    padding: 3rem 0
+}
 /* crea la clase curso: dale un display grid, con un template columns de 1fr y 2fr, un gap de 2rem, y un border-bottom de 1 px solid con el color de tu variable --gris.
 por ultimo, agrega esta linea: 
 padding: 3rem 0; 
@@ -177,7 +265,7 @@ padding: 3rem 0;
 
 
 .curso:last-of-type {
-   border: none;
+    border: none;
 }
 .curso__label {
     font-family: var(--fuenteHeading);
@@ -192,9 +280,20 @@ padding: 3rem 0;
 }
 
 /** Contacto **/
+.contacto-bg{
+    background-image: url(../img/sobre-nosotros.jpg);
+    height: 40rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 /* cre la clase contacto-bg: dale la imagen de fondo usando la imagen sobre-nosotros (averigua como usar el metodo url() para poner una imagen en css)
 dale una altura de 40rem, un background-size cover y background-repeat que sea no-repeat */
-
+.formulario{
+    background-color: var(--blanco);
+    margin: -5rem auto 0 auto;
+    width: 95%;
+    padding: 5rem;
+}
 /* crea la clase formulario: dale un fondo con la variable --blanco, un margin de: -5rem auto 0 auto
 agrega que su ancho sea del 95% y que el padding sea de 5rem*/
 
@@ -203,13 +302,14 @@ agrega que su ancho sea del 95% y que el padding sea de 5rem*/
     margin-bottom: 2rem;
 }
 .campo__label {
-    flex: 0 0 9rem;
+    flex: 0 0 1rem;
     text-align: right;
     padding-right: 2rem;
 }
 .campo__field {
     flex: 1;
     border: 1px solid var(--gris);
+    border-radius: 5px;
 }
 .campo__field--textarea {
     height: 20rem;
