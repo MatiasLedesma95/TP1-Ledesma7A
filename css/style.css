@@ -186,7 +186,7 @@ border: none;
 .boton:hover {
     cursor: pointer;
 
-    animation: escalar 1s;
+    animation: escalar 5s;
 
     /* AÑADE UN EFECTO A TU GUSTO (USANDO UN @KEYFRAMES u otros)*/
 }
