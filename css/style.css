@@ -179,15 +179,15 @@ border: none;
 */
 
 @keyframes escalar {
-    from{transform: scale (1) }
-    to{transform: scale (1.5)}   
-}
+    from {transform: scale(1)}
+    to {transform: scale(1.25);} 
+} 
 
 .boton:hover {
     cursor: pointer;
-
-    animation: escalar 5s;
-
+    animation-name: escalar;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
     /* AÑADE UN EFECTO A TU GUSTO (USANDO UN @KEYFRAMES u otros)*/
 }
 
@@ -300,11 +300,13 @@ agrega que su ancho sea del 95% y que el padding sea de 5rem*/
 .campo {
     display: flex;
     margin-bottom: 2rem;
+    
 }
 .campo__label {
-    flex: 0 0 1rem;
-    text-align: right;
+    flex: 0 0 10rem;
+    text-align: left;
     padding-right: 2rem;
+    
 }
 .campo__field {
     flex: 1;
